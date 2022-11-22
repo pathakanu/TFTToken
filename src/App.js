@@ -97,7 +97,7 @@ function App() {
       const resp = await fcContractWithSigner.getFreeTokens(walletAddress);
       console.log(resp);
       setwithdrawSuccess("FREE TFT token have been sent! Enjoy :)");
-      setTranscationData(resp.transactionHash);
+      setTranscationData(resp.hash);
 
     } catch (err) {
       console.log(err.message);
@@ -170,27 +170,29 @@ function App() {
                     onChange={getData}
                   />
                 </div>
-                <div className="column">
-                  <button className="button is-link is-medium" onClick={getTFTHandler}>
-                    GET TOKENS
-                  </button>
-                </div>
-                <span className="mt=5">
-                  {balance && (
-                    <div className="balance">{balance}</div>
-                  )}
-                </span>
-                <div className="column">
-                  <button className="button is-link is-medium" onClick={getTFTToken}>
-                    GET BALANCE
-                  </button>
+                <div className="buttons">
+                  <div className="column">
+                    <button className="button is-link is-medium" onClick={getTFTHandler}>
+                      GET TOKENS
+                    </button>
+                  </div>
+                  <span className="mtr5">
+                    {balance && (
+                      <div className="balance">{balance}</div>
+                    )}
+                  </span>
+                  <div className="column">
+                    <button className="button is-link is-medium" onClick={getTFTToken}>
+                      GET BALANCE
+                    </button>
+                  </div>
                 </div>
               </div>
               <article className="panel is-grey-darker">
                 <p className="panel-heading">Transaction Data</p>
                 <div className="panel-block">
                   <p>
-                    {transactionData ? 'Transaction Hash: ${transactionData}' : "--"}
+                    {transactionData ? `Transaction Hash: ${transactionData}` : "--"}
                   </p>
                 </div>
               </article>

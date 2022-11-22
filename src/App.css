@@ -63,3 +63,21 @@ body {
 .withdraw-success {
   color: green;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.columns {
+  display: flex;
+  align-items: baseline;
+}
+
+.mtr5 {
+  display: block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
